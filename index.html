@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Top Dispensary in San Diego for Premium Cannabis</title>
+
+  <style>
+    :root{
+      /* Premium “Thorá”-style brand palette (luxury + clean + cannabis-friendly) */
+      --bg-0:#050B0A;
+      --bg-1:#071513;
+      --panel:rgba(255,255,255,.06);
+      --panel2:rgba(255,255,255,.08);
+      --border:rgba(255,255,255,.14);
+
+      --text:#ECF6F2;
+      --muted:rgba(236,246,242,.72);
+
+      --brand:#2BE3B6;   /* mint */
+      --brand2:#B6FF6A;  /* lime */
+      --accent:#FFD36E;  /* warm gold */
+      --accent2:#8BA7FF; /* soft blue highlight */
+
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius:18px;
+      --max:1240px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(950px 560px at 12% -8%, rgba(43,227,182,.22), transparent 60%),
+        radial-gradient(980px 520px at 92% 5%, rgba(182,255,106,.16), transparent 60%),
+        radial-gradient(780px 520px at 70% 120%, rgba(255,211,110,.12), transparent 60%),
+        linear-gradient(180deg, var(--bg-1), var(--bg-0) 65%, #040706 100%);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit}
+    .container{width:min(var(--max), calc(100% - 44px)); margin:0 auto}
+
+    /* HEADER (must be one line) */
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(180deg, rgba(7,21,19,.90), rgba(7,21,19,.62));
+      border-bottom:1px solid var(--border);
+    }
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:14px 0;
+      flex-wrap:nowrap;
+      white-space:nowrap;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+    .logo{
+      width:38px; height:38px;
+      border-radius:12px;
+      background:
+        conic-gradient(from 220deg, var(--brand), var(--brand2), var(--accent), var(--accent2), var(--brand));
+      box-shadow: 0 12px 36px rgba(43,227,182,.18);
+      border:1px solid rgba(255,255,255,.14);
+      flex:0 0 auto;
+    }
+    .brand-text{min-width:0}
+    .brand-text strong{
+      display:block;
+      font-size:13px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand-text span{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    nav{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:0;
+    }
+    .nav-pill{
+      text-decoration:none;
+      font-size:12px;
+      color:rgba(236,246,242,.78);
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .nav-pill:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.07);
+      border-color: rgba(43,227,182,.32);
+      color: var(--text);
+    }
+
+    @media (max-width: 980px){
+      nav{display:none} /* keep header one-line clean on small screens */
+    }
+
+    /* HERO */
+    .hero{padding:56px 0 20px}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr}
+    }
+
+    .card{
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(680px 260px at 22% 12%, rgba(43,227,182,.18), transparent 60%),
+        radial-gradient(560px 260px at 85% 8%, rgba(182,255,106,.14), transparent 55%),
+        radial-gradient(520px 260px at 70% 92%, rgba(255,211,110,.10), transparent 60%);
+      pointer-events:none;
+      opacity:.95;
+    }
+    .card-inner{position:relative; padding:28px}
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(43,227,182,.10);
+      border:1px solid rgba(43,227,182,.22);
+      color: rgba(236,246,242,.92);
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height:1.12;
+      letter-spacing:-.02em;
+    }
+    .lead{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+      max-width: 72ch;
+    }
+
+    .cta-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius: 14px;
+      border:1px solid var(--border);
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
+      white-space:nowrap;
+    }
+    .btn-primary{
+      background: linear-gradient(90deg, rgba(43,227,182,.95), rgba(182,255,106,.90));
+      color:#04120F;
+      box-shadow: 0 14px 46px rgba(43,227,182,.18);
+      border-color: rgba(255,255,255,.18);
+    }
+    .btn-primary:hover{transform: translateY(-1px); box-shadow: 0 18px 62px rgba(43,227,182,.26)}
+    .btn-ghost{
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+    }
+    .btn-ghost:hover{transform: translateY(-1px); border-color: rgba(255,211,110,.35); background: rgba(255,255,255,.07)}
+
+    .side{
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:22px;
+      position:relative;
+      overflow:hidden;
+    }
+    .side::after{
+      content:"";
+      position:absolute;
+      width:240px; height:240px;
+      right:-100px; top:-110px;
+      background: radial-gradient(circle, rgba(139,167,255,.16), transparent 65%);
+      pointer-events:none;
+      transform: rotate(10deg);
+    }
+    .side h3{margin:0 0 10px; font-size:16px}
+    .side p{margin:0; color:var(--muted)}
+    .info{
+      display:grid;
+      gap:10px;
+      margin-top:14px;
+    }
+    .info-item{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:12px;
+      border-radius:14px;
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(255,211,110,.10);
+      margin-top:6px;
+      flex:0 0 auto;
+    }
+    .info-item strong{display:block; font-size:13px}
+    .info-item span{display:block; font-size:12px; color:var(--muted); margin-top:2px}
+
+    /* MAIN BODY */
+    main{padding:10px 0 54px}
+    .stack{display:grid; gap:18px}
+
+    .section{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--radius);
+      padding:22px;
+      box-shadow: 0 14px 40px rgba(0,0,0,.22);
+    }
+    .section h2{
+      margin:0 0 10px;
+      font-size:20px;
+      letter-spacing:-.01em;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .tag{
+      font-size:12px;
+      padding:5px 10px;
+      border-radius:999px;
+      background: rgba(139,167,255,.10);
+      border:1px solid rgba(139,167,255,.22);
+      color: rgba(236,246,242,.95);
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+    .section p{margin:0 0 12px; color:var(--muted)}
+    .section p:last-child{margin-bottom:0}
+
+    .callout{
+      margin-top:14px;
+      padding:16px;
+      border-radius:16px;
+      border:1px solid rgba(182,255,106,.22);
+      background: linear-gradient(180deg, rgba(182,255,106,.08), rgba(255,255,255,.03));
+    }
+    .callout strong{color:var(--text)}
+    .callout p{margin:8px 0 0}
+
+    /* Tables */
+    .table-wrap{
+      overflow:auto;
+      margin-top:14px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.14);
+    }
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      min-width: 900px;
+    }
+    thead th{
+      text-align:left;
+      padding:14px;
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color: rgba(236,246,242,.85);
+      background: rgba(255,255,255,.06);
+      border-bottom:1px solid rgba(255,255,255,.10);
+      position:sticky;
+      top:0;
+      backdrop-filter: blur(10px);
+      z-index:1;
+    }
+    tbody td{
+      padding:14px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      color: rgba(236,246,242,.82);
+      font-size:14px;
+      vertical-align:top;
+    }
+    tbody tr:hover td{background: rgba(255,255,255,.03)}
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      font-size:12px;
+      white-space:nowrap;
+      color: rgba(236,246,242,.88);
+    }
+
+    /* Professional link style */
+    .pro-link{
+      color: var(--text);
+      text-decoration:none;
+      border-bottom: 1px dashed rgba(43,227,182,.70);
+      padding-bottom:2px;
+      transition: border-color .15s ease, color .15s ease;
+    }
+    .pro-link:hover{
+      border-bottom-color: rgba(255,211,110,.90);
+      color: rgba(255,255,255,.98);
+    }
+
+    /* Footer */
+    footer{
+      border-top:1px solid var(--border);
+      background: rgba(0,0,0,.18);
+      padding: 28px 0;
+    }
+    .footer-grid{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .footer-grid small{color:var(--muted)}
+    .social{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .social a{
+      text-decoration:none;
+      color: rgba(236,246,242,.86);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      padding:10px 12px;
+      border-radius: 999px;
+      font-size:13px;
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+    .social a:hover{
+      transform: translateY(-1px);
+      border-color: rgba(43,227,182,.35);
+      background: rgba(255,255,255,.07);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER (one line) -->
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div class="brand-text">
+            <strong>Premium Cannabis • San Diego</strong>
+            <span>Licensed • Lab-Tested • Modern Shopping Experience</span>
+          </div>
+        </div>
+
+        <nav aria-label="Primary navigation">
+          <a class="nav-pill" href="#legal">Legal</a>
+          <a class="nav-pill" href="#quality">Quality</a>
+          <a class="nav-pill" href="#products">Products</a>
+          <a class="nav-pill" href="#choose">Choose</a>
+          <a class="nav-pill" href="#delivery">Delivery</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <article class="card">
+          <div class="card-inner">
+            <div class="kicker">San Diego • California • Premium Selection</div>
+            <h1>Top Dispensary in San Diego for Premium Cannabis</h1>
+            <p class="lead">
+              San Diego has emerged as one of California’s leading cities for legal cannabis access. With a strong regulatory system,
+              diverse product selection, and a growing number of licensed retailers, finding a trusted dispensary in San Diego has become
+              easier than ever. Whether you are a local resident or a visitor exploring cannabis options for the first time, understanding
+              how dispensaries operate and what makes one stand out can help you make a confident decision.
+            </p>
+
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#choose">Explore How to Choose</a>
+              <a class="btn btn-ghost" href="#products">Browse Product Categories</a>
+            </div>
+          </div>
+        </article>
+
+        <aside class="side" aria-label="Highlights">
+          <h3>What “premium” means in practice</h3>
+          <p>
+            Premium isn’t only about potency—it's about lab testing, clean operations, consistent inventory, and expert guidance.
+          </p>
+
+          <div class="info">
+            <div class="info-item">
+              <div class="dot" aria-hidden="true"></div>
+              <div>
+                <strong>Regulated & transparent</strong>
+                <span>Clear THC/CBD labeling and compliant packaging</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="dot" aria-hidden="true"></div>
+              <div>
+                <strong>Experience-led shopping</strong>
+                <span>Budtenders help match effects, formats, and dosage</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="dot" aria-hidden="true"></div>
+              <div>
+                <strong>Modern options</strong>
+                <span>Flower, edibles, vapes, tinctures, topicals, CBD</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- BODY -->
+  <main>
+    <div class="container">
+      <div class="stack">
+
+        <!-- INTRO (FIRST LINK IN INTRO MID) -->
+        <section class="section">
+          <h2><span class="tag">Intro</span> A trusted dispensary makes the difference</h2>
+          <p>
+            From premium flower strains to innovative edibles and wellness-focused CBD products, San Diego dispensaries cater to a wide range
+            of consumer preferences. The key is knowing where to go and what to look for when choosing a reliable provider.
+          </p>
+          <p>
+            If you want a strong reference point for quality standards, product curation, and a professional retail experience, this
+            <a class="pro-link" href="https://www.kingkind.co/" target="_blank" rel="noopener noreferrer">dispensary in san diego</a>
+            is a useful example to explore while you compare your options.
+          </p>
+        </section>
+
+        <!-- LEGAL -->
+        <section class="section" id="legal">
+          <h2><span class="tag">Legal</span> The Legal Framework for Cannabis in San Diego</h2>
+          <p>
+            Cannabis laws in California allow adults aged 21 and over to purchase recreational marijuana from licensed retailers.
+            Medical marijuana patients aged 18 and above can also access cannabis with a valid physician’s recommendation.
+            In San Diego, dispensaries must follow both state guidelines and local city regulations to operate legally.
+          </p>
+          <p>
+            Every licensed dispensary is required to display its permit and comply with strict testing requirements. Products are screened
+            for contaminants and labeled with THC and CBD percentages. This transparency helps consumers make informed decisions while ensuring
+            safety standards are met.
+          </p>
+          <p>
+            Buying from a licensed dispensary in San Diego means you are purchasing regulated, lab-tested products that meet California’s compliance rules.
+          </p>
+        </section>
+
+        <!-- QUALITY -->
+        <section class="section" id="quality">
+          <h2><span class="tag">Quality</span> What Makes a Quality Dispensary Stand Out</h2>
+          <p>
+            Not all dispensaries provide the same experience. While many offer similar product categories, differences in service, atmosphere,
+            and inventory can significantly affect customer satisfaction.
+          </p>
+          <p>
+            A top-rated dispensary in San Diego usually focuses on customer education. Staff members, often referred to as budtenders, guide customers
+            through strain profiles, potency levels, and consumption methods. Instead of simply selling products, they help match options to individual
+            preferences.
+          </p>
+          <p>
+            Clean facilities, organized displays, and secure entry systems also reflect professionalism. A well-managed dispensary prioritizes safety,
+            comfort, and efficiency.
+          </p>
+
+          <div class="callout">
+            <strong>Quick checklist:</strong>
+            <p>
+              Visible license, lab results, clear labeling, knowledgeable staff, and a clean secure storefront are consistent signs of a premium dispensary.
+            </p>
+          </div>
+        </section>
+
+        <!-- PRODUCTS TABLE -->
+        <section class="section" id="products">
+          <h2><span class="tag">Products</span> Cannabis Products You Can Find in San Diego</h2>
+          <p>
+            San Diego dispensaries offer more than traditional marijuana flower. The industry has evolved, introducing modern and discreet consumption options.
+            Consumers can choose products based on desired effects, convenience, or lifestyle compatibility.
+          </p>
+
+          <div class="table-wrap" role="region" aria-label="Main categories of cannabis products" tabindex="0">
+            <table>
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Overview</th>
+                  <th>Consumption Method</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="pill">Cannabis Flower</span></td>
+                  <td>Dried buds in indica, sativa, or hybrid strains</td>
+                  <td>Smoking or vaporizing</td>
+                </tr>
+                <tr>
+                  <td><span class="pill">Edibles</span></td>
+                  <td>Infused gummies, chocolates, and beverages</td>
+                  <td>Oral consumption</td>
+                </tr>
+                <tr>
+                  <td><span class="pill">Vape Pens</span></td>
+                  <td>Portable devices with cannabis oil cartridges</td>
+                  <td>Inhalation</td>
+                </tr>
+                <tr>
+                  <td><span class="pill">Concentrates</span></td>
+                  <td>Potent extracts like wax, live resin, and shatter</td>
+                  <td>Dab rigs or vaporizers</td>
+                </tr>
+                <tr>
+                  <td><span class="pill">Tinctures</span></td>
+                  <td>Liquid extracts taken under the tongue</td>
+                  <td>Sublingual</td>
+                </tr>
+                <tr>
+                  <td><span class="pill">Topicals</span></td>
+                  <td>Lotions and balms infused with cannabinoids</td>
+                  <td>Applied to skin</td>
+                </tr>
+                <tr>
+                  <td><span class="pill">CBD Products</span></td>
+                  <td>Non-intoxicating cannabis derivatives</td>
+                  <td>Various methods</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout">
+            <strong>Effects timing:</strong>
+            <p>
+              Each product category delivers different onset times and durations. Inhaled cannabis typically produces quick effects,
+              while edibles take longer but last significantly longer.
+            </p>
+          </div>
+        </section>
+
+        <!-- CHOOSING -->
+        <section class="section" id="choose">
+          <h2><span class="tag">Choosing</span> Choosing the Right Dispensary in San Diego</h2>
+          <p>
+            With numerous dispensaries across neighborhoods such as Downtown San Diego, Pacific Beach, La Mesa, and Mission Valley,
+            selecting the best one requires some research.
+          </p>
+          <p>
+            Location is important, but product quality and service should carry more weight. Many consumers check online reviews before visiting.
+            Feedback about staff friendliness, pricing transparency, and wait times can help narrow choices.
+          </p>
+          <p>Here are several qualities that define a dependable dispensary in San Diego:</p>
+          <ul style="margin:0; padding-left:18px; color:var(--muted)">
+            <li>Valid California cannabis license</li>
+            <li>Transparent product labeling</li>
+            <li>Wide strain selection</li>
+            <li>Knowledgeable staff guidance</li>
+            <li>Fair pricing and promotional offers</li>
+          </ul>
+          <p style="margin-top:12px">
+            Some dispensaries also provide online menus, allowing customers to browse products before visiting the store.
+          </p>
+        </section>
+
+        <!-- IN-STORE + SECOND LINK IN MID CONTENT -->
+        <section class="section" id="instore">
+          <h2><span class="tag">Experience</span> In-Store Experience: What to Expect</h2>
+          <p>
+            When entering a dispensary, identification is verified at reception. After confirmation, customers gain access to the main retail area
+            where products are displayed behind counters or inside secured showcases.
+          </p>
+          <p>
+            Budtenders typically ask questions about desired effects. Someone seeking relaxation might be introduced to indica-dominant strains,
+            while a customer looking for daytime focus may explore sativa options.
+          </p>
+          <p>
+            If you want additional guidance on how to evaluate stores, compare menus, and understand what to look for, you can also read this
+            <a class="pro-link" href="https://annaeverly96-dot.github.io/dispensary-in-san-diego/" target="_blank" rel="noopener noreferrer">helpful dispensary guide for San Diego shoppers</a>
+            while researching your best local options.
+          </p>
+          <p>
+            Unlike traditional retail stores, cannabis purchases are tracked through California’s regulatory system. This ensures compliance with daily
+            purchase limits and maintains industry accountability.
+          </p>
+        </section>
+
+        <!-- REC VS MED -->
+        <section class="section">
+          <h2><span class="tag">Compare</span> Recreational vs Medical Cannabis in San Diego</h2>
+          <p>
+            Although recreational cannabis is widely available, medical patients may enjoy certain advantages. The comparison below highlights key distinctions.
+          </p>
+
+          <div class="table-wrap" role="region" aria-label="Recreational vs medical comparison" tabindex="0">
+            <table>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Recreational Users</th>
+                  <th>Medical Patients</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="pill">Minimum Age</span></td>
+                  <td>21+</td>
+                  <td>18+ with recommendation</td>
+                </tr>
+                <tr>
+                  <td><span class="pill">Tax Considerations</span></td>
+                  <td>Standard state taxes</td>
+                  <td>Potential medical tax benefits</td>
+                </tr>
+                <tr>
+                  <td><span class="pill">Purchase Quantity Limits</span></td>
+                  <td>State regulated</td>
+                  <td>May allow higher limits</td>
+                </tr>
+                <tr>
+                  <td><span class="pill">Specialized Products</span></td>
+                  <td>General selection</td>
+                  <td>Medical-specific options</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout">
+            <strong>Medical reminder:</strong>
+            <p>
+              Medical users often seek cannabis for conditions such as chronic pain, anxiety, or sleep disorders. Consulting a healthcare professional before medical use is recommended.
+            </p>
+          </div>
+        </section>
+
+        <!-- BENEFITS -->
+        <section class="section">
+          <h2><span class="tag">Benefits</span> Benefits of Buying from a Licensed Dispensary</h2>
+          <p>
+            Purchasing cannabis from a licensed dispensary in San Diego ensures product safety and consistency. All items must undergo laboratory testing
+            for potency and contaminants. Labels provide accurate cannabinoid content information, helping customers control dosage.
+          </p>
+          <p>
+            Licensed dispensaries also contribute to the local economy through tax revenue and employment opportunities. By choosing regulated retailers,
+            consumers support community development and reduce illegal market activity.
+          </p>
+          <p>
+            Additionally, many San Diego dispensaries offer loyalty programs, first-time customer discounts, and daily specials. These incentives make legal
+            cannabis more accessible while rewarding repeat customers.
+          </p>
+        </section>
+
+        <!-- DELIVERY -->
+        <section class="section" id="delivery">
+          <h2><span class="tag">Delivery</span> The Growth of Cannabis Delivery Services</h2>
+          <p>
+            In addition to storefront locations, many dispensaries in San Diego now offer home delivery. This service provides convenience and privacy,
+            especially for medical patients or individuals with busy schedules.
+          </p>
+          <p>
+            Delivery orders are placed online through verified platforms. Upon arrival, drivers confirm age and identity before completing the transaction.
+            Licensed delivery services follow the same compliance standards as physical stores.
+          </p>
+          <p>
+            This modern approach to cannabis retail has expanded accessibility across San Diego County.
+          </p>
+        </section>
+
+        <!-- RESPONSIBLE USE -->
+        <section class="section" id="responsible">
+          <h2><span class="tag">Safety</span> Responsible Cannabis Use</h2>
+          <p>
+            While legal access has simplified purchasing, responsible consumption remains essential. Beginners should start with low doses, especially when using edibles.
+            Effects can take time to appear, and overconsumption may cause discomfort.
+          </p>
+          <p>
+            Cannabis should never be used before driving or operating heavy machinery. Safe storage practices are equally important, particularly in households with children or pets.
+            Education and moderation are key to a positive cannabis experience.
+          </p>
+        </section>
+
+        <!-- CONCLUSION -->
+        <section class="section">
+          <h2><span class="tag">Conclusion</span> Final Thoughts</h2>
+          <p>
+            The cannabis industry in San Diego continues to evolve, offering residents and visitors a safe, regulated environment to explore high-quality products.
+            A reputable dispensary in San Diego provides more than just cannabis—it delivers education, transparency, and professional service.
+          </p>
+          <p>
+            By choosing licensed retailers, consumers benefit from lab-tested products, knowledgeable guidance, and a secure shopping experience. Whether you are seeking relaxation,
+            creativity, or wellness support, San Diego’s dispensaries offer diverse solutions tailored to individual needs.
+          </p>
+          <p>
+            As legalization continues to shape the industry, San Diego remains a trusted destination for premium cannabis and responsible retail practices.
+          </p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <small>© <span id="year"></span> Premium Cannabis San Diego • Built with a modern, brand-forward UI/UX.</small>
+        <div class="social" aria-label="Social links">
+          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://x.com/" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
